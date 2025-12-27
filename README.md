@@ -24,15 +24,11 @@ Both implementations display:
 
 ### R Shiny
 
-![R Shiny Dashboard](Shiny/RShiny.png)
-
-[Watch the demo video](Shiny/RShiny.mp4)
+![R Shiny Demo](Shiny/RShiny.gif)
 
 ### Streamlit
 
-![Streamlit Dashboard](Streamlit/Streamlit.png)
-
-[Watch the demo video](Streamlit/Streamlit.mp4)
+![Streamlit Demo](Streamlit/Streamlit.gif)
 
 ## Project Structure
 

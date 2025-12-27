@@ -6,6 +6,9 @@
 # Article draft
 article.md
 
+# Video files (too large for git)
+*.mp4
+
 # Python
 __pycache__/
 *.py[cod]
