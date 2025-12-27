@@ -26,9 +26,13 @@ Both implementations display:
 
 ![R Shiny Demo](Shiny/RShiny.gif)
 
+[Download full quality video](Shiny/RShiny.mp4)
+
 ### Streamlit
 
 ![Streamlit Demo](Streamlit/Streamlit.gif)
+
+[Download full quality video](Streamlit/Streamlit.mp4)
 
 ## Project Structure
 
