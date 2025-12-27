@@ -247,7 +247,7 @@ ui <- page_fillable(
     class = "card shadow",
     style = "background: white; border-radius: 8px; padding: 20px;",
 
-    h4("Overture Maps Buildings Viewer", class = "card-title mb-3"),
+    h4("RShiny Buildings Viewer", class = "card-title mb-3"),
 
     hr(),
 

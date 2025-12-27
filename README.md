@@ -22,6 +22,18 @@ Both implementations display:
 - Reactive building count and total area statistics
 - Style controls (color, opacity)
 
+### R Shiny
+
+![R Shiny Dashboard](Shiny/RShiny.png)
+
+[Watch the demo video](Shiny/RShiny.mp4)
+
+### Streamlit
+
+![Streamlit Dashboard](Streamlit/Streamlit.png)
+
+[Watch the demo video](Streamlit/Streamlit.mp4)
+
 ## Project Structure
 
 ```

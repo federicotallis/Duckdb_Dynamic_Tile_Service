@@ -7,7 +7,7 @@ import threading
 from streamlit_autorefresh import st_autorefresh
 
 st.set_page_config(
-    page_title="Overture Maps Buildings Viewer",
+    page_title="Streamlit Buildings Viewer",
     page_icon="🏠",
     layout="wide"
 )
@@ -104,7 +104,7 @@ def query_stats(bounds):
 
 
 def main():
-    st.title("Overture Maps Buildings Viewer")
+    st.title("Streamlit Buildings Viewer")
 
     server_running = ensure_tile_server_running()
 
