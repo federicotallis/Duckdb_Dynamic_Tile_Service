@@ -1,0 +1,42 @@
+# Data files (large, generated locally)
+*.duckdb
+*.duckdb.wal
+*.parquet
+
+# Article draft
+article.md
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+.env
+venv/
+.venv/
+
+# R
+.Rhistory
+.Rdata
+.RData
+.Ruserdata
+.Rproj.user/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp files
+NUL
+*.log
+*.tmp
+
+# Claude Code local settings
+.claude/
