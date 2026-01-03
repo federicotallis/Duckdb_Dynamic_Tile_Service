@@ -82,7 +82,13 @@ generate_tile <- function(con, z, x, y) {
         id,
         name,
         height,
-        class
+        class,
+        COALESCE(round(ST_Area(ST_Transform(geometry, 'EPSG:4326', 'EPSG:28992', TRUE))), 0) as building_area,
+        CONCAT_WS(' | ',
+          CASE WHEN class IS NOT NULL THEN CONCAT('Class: ', UPPER(LEFT(class, 1)), LOWER(SUBSTRING(class, 2))) END,
+          CASE WHEN height IS NOT NULL THEN CONCAT('Height: ', CAST(round(height,1) AS VARCHAR), 'm') END,
+          CONCAT('Area: ', CAST(round(ST_Area(ST_Transform(geometry, 'EPSG:4326', 'EPSG:28992', TRUE))) AS VARCHAR), ' m²')
+        ) as info
       FROM buildings
       WHERE bbox.xmin <= %f
         AND bbox.xmax >= %f
@@ -189,7 +195,7 @@ query_stats <- function(con, bbox) {
   query <- sprintf("
     SELECT
       COUNT(*) as count,
-      COALESCE(SUM(ST_Area(ST_Transform(geometry, 'EPSG:4326', 'EPSG:3857', TRUE))), 0) as area
+      COALESCE(SUM(ST_Area(ST_Transform(geometry, 'EPSG:4326', 'EPSG:28992', TRUE))), 0) as area
     FROM buildings
     WHERE bbox.xmin <= %f
       AND bbox.xmax >= %f
@@ -319,7 +325,12 @@ server <- function(input, output, session) {
         source = "buildings",
         source_layer = "buildings",
         fill_color = input$color,
-        fill_opacity = input$opacity
+        fill_opacity = input$opacity,
+        popup = "info",
+        hover_options = list(
+          fill_color = "#ffff00",
+          fill_opacity = 0.8
+        )
       ) |>
       add_line_layer(
         id = "buildings-outline",
